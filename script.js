@@ -1,3 +1,5 @@
+import "./style.css";
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM готов!");
 
@@ -106,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const gcs = "getComputedStyle" in window;
 
     document.body.appendChild(element);
-    cStyle = (gcs ? window.getComputedStyle(element, "") : element.currentStyle)
+    let cStyle = (gcs ? window.getComputedStyle(element, "") : element.currentStyle)
       .display;
     document.body.removeChild(element);
 
