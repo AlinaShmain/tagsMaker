@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const createElement = (options) => {
     let element = document.createElement(options.tag);
+
     if (options.classes) {
       element.classList = options.classes;
     }
@@ -70,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let name = createElement({
       tag: "span",
       classes: "name__block",
-      text: `${numBlock} block`,
+      text: `${numBlock} block ${a}`,
     });
     parentNode.append(name);
 
@@ -79,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       classes: "button-delete",
     });
     const icon = createElement({
-      tags: "i",
+      tag: "i",
       classes: "fas fa-times button-delete__icon",
     });
     deleteButton.append(icon);
@@ -88,9 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let childNodes = new Array(c);
     for (let i = 0; i < childNodes.length; i++) {
       childNodes[i] = createElement({
-        tags: b,
+        tag: b,
         classes: "child__block",
-        text: `${i + 1} span`,
+        text: `${i + 1} ${b}`,
       });
     }
 
